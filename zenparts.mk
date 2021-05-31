@@ -14,12 +14,26 @@
 # limitations under the License.
 #
 
+# Files Dirac
+PRODUCT_COPY_FILES += \
+    packages/apps/ZenParts/vendor/lib/libDiracAPI_SHARED.so:$(TARGET_COPY_OUT_VENDOR)/lib/libDiracAPI_SHARED.so \
+    packages/apps/ZenParts/vendor/lib/soundfx/libdirac.so:$(TARGET_COPY_OUT_VENDOR)/lib/soundfx/libdirac.so \
+    packages/apps/ZenParts/vendor/etc/diracmobile.config:$(TARGET_COPY_OUT_VENDOR)/etc/diracmobile.config \
+    packages/apps/ZenParts/vendor/etc/diracvdd.bin:$(TARGET_COPY_OUT_VENDOR)/etc/diracvdd.bin \
+    packages/apps/ZenParts/vendor/etc/audio.scd:$(TARGET_COPY_OUT_VENDOR)/etc/audio.scd \
+    packages/apps/ZenParts/vendor/proprietary/vendor/etc/drc/drc_cfg_5.1.txt:$(TARGET_COPY_OUT_VENDOR)/etc/drc/drc_cfg_5.1.txt \
+    packages/apps/ZenParts/vendor/proprietary/vendor/etc/drc/drc_cfg_AZ.txt:$(TARGET_COPY_OUT_VENDOR)/etc/drc/drc_cfg_AZ.txt \
+    packages/apps/ZenParts/vendor/proprietary/vendor/etc/surround_sound_3mic/surround_sound_rec_5.1.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/surround_sound_3mic/surround_sound_rec_5.1.cfg \
+    packages/apps/ZenParts/vendor/proprietary/vendor/etc/surround_sound_3mic/surround_sound_rec_AZ.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
+
 PRODUCT_SOONG_NAMESPACES += \
     packages/apps/ZenParts
 
 # ZenParts
 PRODUCT_PACKAGES += \
-    ZenParts
+    ZenParts \
+    XiaomiDoze \
+    XiaomiDirac
 
 PRODUCT_COPY_FILES += \
     packages/apps/ZenParts/init/init.zenparts.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.zenparts.rc \
@@ -30,3 +44,13 @@ PRODUCT_COPY_FILES += \
 # Priv-App Permisison
 PRODUCT_COPY_FILES += \
     packages/apps/ZenParts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-parts.xml
+
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+   packages/apps/ZenParts/overlay
+
+# Sepolicy
+BOARD_SEPOLICY_DIRS += packages/apps/ZenParts/sepolicy
+
+# Vendor properties
+-include packages/apps/ZenParts/vendor_prop.mk
