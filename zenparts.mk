@@ -32,7 +32,6 @@ PRODUCT_SOONG_NAMESPACES += \
 # ZenParts
 PRODUCT_PACKAGES += \
     ZenParts \
-    XiaomiDoze \
     XiaomiDirac
 
 PRODUCT_COPY_FILES += \
