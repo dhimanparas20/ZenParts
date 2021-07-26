@@ -35,6 +35,11 @@ PRODUCT_PACKAGES += \
     XiaomiDirac \
     Doze
 
+# GVisual Mod
+PRODUCT_PACKAGES += \
+    G-UIRadiusAndroid \
+    G-UIRadiusSystemUI
+
 PRODUCT_COPY_FILES += \
     packages/apps/ZenParts/init/init.zenparts.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.zenparts.rc \
     packages/apps/ZenParts/init/init.zenparts.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.zenparts.sh \
