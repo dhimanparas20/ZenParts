@@ -32,13 +32,7 @@ PRODUCT_SOONG_NAMESPACES += \
 # ZenParts
 PRODUCT_PACKAGES += \
     ZenParts \
-    XiaomiDirac \
-    Doze
-
-# GVisual Mod
-#PRODUCT_PACKAGES += \
-#    G-UIRadiusAndroid \
-#    G-UIRadiusSystemUI
+    XiaomiDirac
 
 PRODUCT_COPY_FILES += \
     packages/apps/ZenParts/init/init.zenparts.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.zenparts.rc \
